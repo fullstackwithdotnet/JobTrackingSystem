@@ -8,37 +8,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
 
-    <asp:PlaceHolder runat="server">
+   <%-- <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
+    </asp:PlaceHolder>--%>
+    
+   
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <%--<webopt:BundleReference runat="server" Path="~/Content/css" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <link rel="stylesheet" type="text/css" href="assets/libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/libs/quill/dist/quill.snow.css">
+    <link href="dist/css/style.min.css" rel="stylesheet">
 </head>
 <body>
-    <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
+    
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div>
+        <div id="main-wrapper">
+            <header class="topbar" data-navbarbg="skin5">
+                <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                    <div class="navbar-header" data-logobg="skin5">
+                        <!-- This is for the sidebar toggle which is visible on mobile only -->
+                        <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                        <!-- ============================================================== -->
+                        <!-- Logo -->
+                        <!-- ============================================================== -->
+                        <a class="navbar-brand" href="index.html">
+                            <!-- Logo icon -->
+                            <b class="logo-icon p-l-10">
+                                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                <!-- Dark Logo icon -->
+                                <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                <%--<p>JOB</p>--%>
+
+                            </b>
+                            <!--End Logo icon -->
+                            <!-- Logo text -->
+                            <span class="logo-text">
+                                <!-- dark Logo text -->
+                                <%--<img src="assets/images/logo-text.png" alt="homepage" class="light-logo" />--%>
+                                JMS
+                            </span>
+                            <!-- Logo icon -->
+                            <!-- <b class="logo-icon"> -->
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <!-- <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+
+                            <!-- </b> -->
+                            <!--End Logo icon -->
+                        </a>
+                        <!-- ============================================================== -->
+                        <!-- End Logo -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Toggle which is visible on mobile only -->
+                        <!-- ============================================================== -->
+                        <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                        <!-- ============================================================== -->
+                        <!-- toggle and nav items -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav float-left mr-auto">
+                            <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                            
+                           
+                        </ul>
+                       
+                    </div>
+                </nav>
+            </header>
+            <aside class="left-sidebar" data-sidebarbg="skin5">
+                <!-- Sidebar scroll-->
+                <div class="scroll-sidebar">
+                    <!-- Sidebar navigation-->
+                    <nav class="sidebar-nav">
+                        <ul id="sidebarnav" class="p-t-30">
+                            <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="/Default.aspx" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                            <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="/Resources.aspx" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Resources</span></a></li>
+                        </ul>
+                    </nav>
+                    <!-- End Sidebar navigation -->
+                </div>
+                <!-- End Sidebar scroll-->
+            </aside>
+            <div class="page-wrapper">
+               
+                <div class="container-fluid">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <footer class="footer text-center">
+                    All Rights Reserved by DA Solutions. Designed and Developed by <a href="#">DA Solutions</a>.
+                </footer>
+            </div>
+        </div>
+
+        <%-- <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -56,16 +133,38 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+        </div>--%>
+        <%-- <div class="container body-content">
+          
             <hr />
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>
-        </div>
+        </div>--%>
+    
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    <script src="assets/libs/flot/excanvas.js"></script>
+    <script src="assets/libs/flot/jquery.flot.js"></script>
+    <script src="assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="dist/js/pages/chart/chart-page-init.js"></script>
 
-    </form>
 </body>
 </html>

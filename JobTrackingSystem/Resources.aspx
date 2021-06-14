@@ -12,12 +12,11 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Father's Name</th>
+                <th>Mother's Name</th>
+                <th>Gender</th>
                 <th>DOB</th>
-                <th>Address Type</th>
-                <th>Address Line 1</th>
-                <th>Address Line 2</th>
-                <th>City</th>
-                <th>Mobile</th>
+                <th>Photo</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -26,13 +25,12 @@
                     <tr>
                         <td><%# Eval("FirstName") %></td>
                         <td><%# Eval("LastName") %></td>
-                        <td><%# Eval("FatherName") %></td>
+                        <td><%# Eval("FathersName") %></td>
+                        <td><%# Eval("MothersName") %></td>
+                        <td><%# Eval("Gender") %></td>
                         <td><%# Eval("DOB") %></td>
-                        <td><%# Eval("AddressType") %></td>
-                        <td><%# Eval("AddressLine1") %></td>
-                        <td><%# Eval("AddressLine2") %></td>
-                        <td><%# Eval("City") %></td>
-                        <td><%# Eval("Mobile") %></td>
+                        <td><%# Eval("Photo") %></td>
+                        <td><asp:HyperLink runat="server" Text="Edit"></asp:HyperLink></td>
                     </tr>
             </itemtemplate>
             </asp:Repeater>

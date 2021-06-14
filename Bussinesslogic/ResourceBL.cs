@@ -10,7 +10,7 @@ namespace Bussinesslogic
 {
     public class ResourceBL
     {
-        public int SaveResource(ResourceBO resource) 
+        public int SaveResource(Resource resource) 
         {
             try
             {
@@ -23,10 +23,22 @@ namespace Bussinesslogic
             }
         }
 
-        public List<ResourceBO> GetResources()
+        public List<Resource> GetResources()
         {
             ResourceDA resourceService = new ResourceDA();
             return resourceService.GetResource();
+        }
+
+        public int SaveResourceAddress(Address resourceAddress)
+        {
+            var resourceService = new ResourceDA();
+            return resourceService.AddResourceAddress(resourceAddress);
+        }
+
+        public int SaveResourceEducation(Education resourceEdu)
+        {
+            var resourceService = new ResourceDA();
+            return resourceService.AddResourceEducation(resourceEdu);
         }
     }
 }

@@ -13,14 +13,12 @@ namespace JobTrackingSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsCallback)
-            {
-                var resourceBl = new ResourceBL();
+            if (IsCallback) return;
+            var resourceBl = new ResourceBL();
 
-                var resources = resourceBl.GetResources();
-                resourcesTable.DataSource = resources;
-                resourcesTable.DataBind();
-            }
+            var resources = resourceBl.GetResources();
+            resourcesTable.DataSource = resources;
+            resourcesTable.DataBind();
         }
     }
 }
