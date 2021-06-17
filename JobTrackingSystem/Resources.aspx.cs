@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+﻿using Bussinesslogic;
+using System;
 using System.Web.UI.WebControls;
-using BusinessObject;
-using Bussinesslogic;
 
 namespace JobTrackingSystem
 {
@@ -19,6 +14,16 @@ namespace JobTrackingSystem
             var resources = resourceBl.GetResources();
             resourcesTable.DataSource = resources;
             resourcesTable.DataBind();
+        }
+
+
+       
+        protected void linkDelete_OnCommand(object sender, CommandEventArgs e)
+        {
+            var resourceBl = new ResourceBL();
+            var result = resourceBl.DeleteResource(Convert.ToInt32(e.CommandArgument));
+            Response.Redirect(string.Format("~/Resources.aspx"));
+
         }
     }
 }

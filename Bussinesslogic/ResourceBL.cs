@@ -29,6 +29,24 @@ namespace Bussinesslogic
             return resourceService.GetResource();
         }
 
+        public List<Address> GetResourcesAddressesForResource(int id)
+        {
+            ResourceDA resourceService = new ResourceDA();
+            return resourceService.GetResourcesAddressesForResource(id);
+        }
+
+        public Address GetResourcesAddressesById(int addressId, int resourceId)
+        {
+            ResourceDA resourceService = new ResourceDA();
+            return resourceService.GetResourcesAddressesById(addressId, resourceId);
+        }
+
+        public Resource GetResourcesById(int resourceId)
+        {
+            var resourceService = new ResourceDA();
+            return resourceService.GetResourcesById(resourceId);
+        }
+
         public int SaveResourceAddress(Address resourceAddress)
         {
             var resourceService = new ResourceDA();
@@ -39,6 +57,24 @@ namespace Bussinesslogic
         {
             var resourceService = new ResourceDA();
             return resourceService.AddResourceEducation(resourceEdu);
+        }
+
+        public int SaveResourceSocial(Social resourceSocial)
+        {
+            var resourceService = new ResourceDA();
+            return resourceService.AddResourceSocial(resourceSocial);
+        }
+
+        public int DeleteResource(int resourceId)
+        {
+            var resourceService = new ResourceDA();
+            return resourceService.DeleteResource(resourceId);
+        }
+
+        public Education GetResourcesEducationById(int resourceId)
+        {
+            var resourceService = new ResourceDA();
+            return resourceService.GetResourcesEducationById(resourceId);
         }
     }
 }

@@ -5,7 +5,7 @@
     <div class="page-breadcrumb" style="margin-top: -20px">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">Form Basic</h4>
+                <h4 class="page-title">Add Resource</h4>
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -28,6 +28,7 @@
             </Scripts>
         </asp:ScriptManager>
         <div class="row">
+            <asp:TextBox CssClass="form-control" ID="txtResourceId" Visible="False" runat="server" />
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
@@ -81,9 +82,7 @@
                             <label for="photoUpload" class="col-sm-3 text-right control-label col-form-label">Photo *</label>
                             <div class="col-sm-9">
                                 <asp:FileUpload  CssClass="form-control" ID="photoUpload" runat="server"  />
-                                <%--<asp:Button ID="btnPhotoUpload" runat="server" Text="Upload Image" OnClick="btnPhotoUpload_OnClick" />--%><br/>
-
-                                <%--<asp:Image ID="imagePhoto" runat="server" Width="300" Height="200"  />--%>
+                                <asp:Image ID="imagePhoto" runat="server" Width="300" Height="200"  />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="photoUpload" ForeColor="Red" ErrorMessage="Please upload photo" ValidationGroup="g1" Width="125px"
                                                             Font-Bold="True"></asp:RequiredFieldValidator>
                             </div>
@@ -93,6 +92,7 @@
                     <div class="border-top">
                         <div class="card-body">
                             <asp:Button runat="server" ValidationGroup="g1" ID="btnAddResource" CssClass="btn btn-primary" OnClick="btnAddResource_OnClick" Text="Add Resource And Continue"></asp:Button>
+                            <asp:Button runat="server" ValidationGroup="g1" ID="btnCancel" CssClass="btn btn-secondary" OnClick="btnCancel_OnClick" Text="Cancel"></asp:Button>
                         </div>
                     </div>
                 </div>

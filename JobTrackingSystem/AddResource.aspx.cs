@@ -15,7 +15,22 @@ namespace JobTrackingSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!this.IsPostBack)
+            {
+                string resourceId = Request.QueryString["resourceId"];
+                
+                var resourceBl = new ResourceBL();
+                var resource = resourceBl.GetResourcesById(Convert.ToInt32(resourceId));
+                txtResourceId.Text = resourceId;
+                txtFName.Text = resource.FirstName;
+                txtLName.Text = resource.LastName;
+                txtFatherName.Text = resource.FathersName;
+                txtMotherName.Text = resource.MothersName;
+                txtDOB.Text = Convert.ToDateTime(resource.DOB).ToString("yyyy-MM-dd");
+                imagePhoto.ImageUrl = $"/Images/{resource.Photo}";
+                drpGender.SelectedValue = resource.Gender;
+               
+            }
         }
 
         protected void btnAddResource_OnClick(object sender, EventArgs e)
@@ -29,11 +44,13 @@ namespace JobTrackingSystem
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Please Enter Last Name')", true);
             }
+
+           
             else
             {
                 Resource bo = new Resource();
 
-
+                bo.Id = Convert.ToInt32(txtResourceId.Text);
                 bo.FirstName = txtFName.Text;
                 bo.LastName = txtLName.Text;
                 bo.FathersName = txtFatherName.Text;
@@ -41,27 +58,33 @@ namespace JobTrackingSystem
                 bo.DOB = txtDOB.Text;
                 bo.Gender = drpGender.SelectedItem.Value;
 
-                string folderPath = Server.MapPath("~/Images/");
+                string folderPath = Server.MapPath("/Images/");
 
-                //Check whether Directory (Folder) exists.
                 if (!Directory.Exists(folderPath))
                 {
-                    //If Directory (Folder) does not exists Create it.
                     Directory.CreateDirectory(folderPath);
                 }
-                //Save the File to the Directory (Folder).
-                photoUpload.SaveAs(folderPath + Path.GetFileName(photoUpload.FileName));
-                ////Display the Picture in Image control.
-                //imagePhoto.ImageUrl = "~/Images/" + Path.GetFileName(photoUpload.FileName);
 
-                bo.Photo = photoUpload.FileName;
+                if (!photoUpload.HasFile)
+                {
+                    if (!string.IsNullOrEmpty(imagePhoto.ImageUrl))
+                    {
+                        bo.Photo = imagePhoto.ImageUrl;
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Please Enter Last Name')", true);
+                    }
+                }
+                else
+                {
+                    photoUpload.SaveAs(folderPath + Path.GetFileName(photoUpload.FileName));
+                    bo.Photo = photoUpload.FileName;
+                }
 
                 var resourceBl = new ResourceBL();
-
                 int result = resourceBl.SaveResource(bo);
 
-
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Data saved successfully By Using 3 tier by :-sai')", true);
                 Response.Redirect(string.Format("~/AddResourceAddress.aspx?resourceId={0}", result));
 
 
@@ -86,6 +109,11 @@ namespace JobTrackingSystem
 
             //Display the Picture in Image control.
             //imagePhoto.ImageUrl = "~/Images/" + Path.GetFileName(photoUpload.FileName);
+        }
+
+        protected void btnCancel_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect(string.Format("~/Resources.aspx"));
         }
     }
 }

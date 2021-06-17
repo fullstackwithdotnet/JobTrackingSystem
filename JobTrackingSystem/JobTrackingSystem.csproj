@@ -109,6 +109,7 @@
     <Content Include="AddResource.aspx" />
     <Content Include="AddResourceAddress.aspx" />
     <Content Include="AddResourceEducation.aspx" />
+    <Content Include="AddResourceSocial.aspx" />
     <Content Include="assets\extra-libs\calendar\calendar.css" />
     <Content Include="assets\extra-libs\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.css" />
     <Content Include="assets\extra-libs\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.min.css" />
@@ -1057,6 +1058,7 @@
     <Content Include="dist\css\icons\weather-icons\sass\weather-icons.min.scss" />
     <Content Include="dist\css\icons\weather-icons\sass\weather-icons.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="ResourceAddressList.aspx" />
     <Content Include="Resources.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1114,6 +1116,13 @@
     <Compile Include="AddResourceEducation.aspx.designer.cs">
       <DependentUpon>AddResourceEducation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddResourceSocial.aspx.cs">
+      <DependentUpon>AddResourceSocial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddResourceSocial.aspx.designer.cs">
+      <DependentUpon>AddResourceSocial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -1141,6 +1150,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceAddressList.aspx.cs">
+      <DependentUpon>ResourceAddressList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResourceAddressList.aspx.designer.cs">
+      <DependentUpon>ResourceAddressList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Resources.aspx.cs">
       <DependentUpon>Resources.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

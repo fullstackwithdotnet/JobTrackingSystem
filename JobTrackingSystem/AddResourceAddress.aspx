@@ -5,7 +5,7 @@
     <div class="page-breadcrumb" style="margin-top: -20px">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">Form Basic</h4>
+                <h4 class="page-title">Address Details</h4>
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -28,6 +28,7 @@
             </Scripts>
         </asp:ScriptManager>
         <div class="row">
+            <asp:TextBox CssClass="form-control" ID="txtAddressId" Visible="False" runat="server" />
             <asp:TextBox CssClass="form-control" ID="txtResourceId" Visible="False" runat="server" />
             <div class="col-md-12">
                 <div class="card">
@@ -36,7 +37,7 @@
                         <div class="form-group row">
                             <label for="drpAddressType" class="col-sm-3 text-right control-label col-form-label">Address Type</label>
                             <div class="col-sm-9">
-                                <asp:DropDownList CssClass="form-control" ID="drpAddressType" runat="server" >
+                                <asp:DropDownList CssClass="form-control" ID="drpAddressType" runat="server">
                                     <asp:ListItem Text="Residential" Value="Residential"></asp:ListItem>
                                     <asp:ListItem Text="Communication" Value="Communication"></asp:ListItem>
                                     <asp:ListItem Text="Permanent" Value="Permanent"></asp:ListItem>
@@ -48,7 +49,7 @@
                             <div class="col-sm-9">
                                 <asp:TextBox CssClass="form-control" ID="txtAdd1" runat="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAdd1" ForeColor="Red" ErrorMessage="Enter Address Line 1" ValidationGroup="g1" Width="125px"
-                                                            Font-Bold="True"></asp:RequiredFieldValidator>
+                                    Font-Bold="True"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -56,7 +57,7 @@
                             <div class="col-sm-9">
                                 <asp:TextBox CssClass="form-control" ID="txtAdd2" runat="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtAdd2" ForeColor="Red" ErrorMessage="Enter Address Line 2" ValidationGroup="g1" Width="125px"
-                                                            Font-Bold="True"></asp:RequiredFieldValidator>
+                                    Font-Bold="True"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -74,30 +75,32 @@
                         <div class="form-group row">
                             <label for="txtZip" class="col-sm-3 text-right control-label col-form-label">Zip</label>
                             <div class="col-sm-9">
-                                <asp:TextBox  CssClass="form-control" ID="txtZip" runat="server" />
-                                
+                                <asp:TextBox CssClass="form-control" ID="txtZip" runat="server" />
+
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="txtPin" class="col-sm-3 text-right control-label col-form-label">PIN</label>
                             <div class="col-sm-9">
-                                <asp:TextBox  CssClass="form-control" ID="txtPin" runat="server" />
-                                
+                                <asp:TextBox CssClass="form-control" ID="txtPin" runat="server" />
+
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="txtCountry" class="col-sm-3 text-right control-label col-form-label">Country</label>
                             <div class="col-sm-9">
-                                <asp:TextBox  CssClass="form-control" ID="txtCountry" runat="server" />
-                               
+                                <asp:TextBox CssClass="form-control" ID="txtCountry" runat="server" />
+
                             </div>
                         </div>
-                       
+
                     </div>
                     <div class="border-top">
                         <div class="card-body">
                             <asp:Button runat="server" ValidationGroup="g1" ID="btnAddResourceAddresAndContinue" CssClass="btn btn-primary" OnClick="btnAddResourceAddresAndContinue_OnClick" Text="Add Address And Continue"></asp:Button>
-                            <asp:Button runat="server" ValidationGroup="g1" ID="btnAddResourceAddresAndAddMore" CssClass="btn btn-primary" OnClick="btnAddResourceAddresAndAddMore_OnClick" Text="Add Another Address"></asp:Button>
+                            <asp:Button runat="server" ID="btnAddResourceAddresAndAddMore" CssClass="btn btn-info" OnClick="btnAddResourceAddresAndAddMore_OnClick" Text="Add Another Address"></asp:Button>
+                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-secondary" OnClick="btnCancel_OnClick" Text="Cancel"></asp:Button>
+
                         </div>
                     </div>
                 </div>

@@ -29,78 +29,82 @@
             </Scripts>
         </asp:ScriptManager>
         <div class="row">
+            <asp:TextBox CssClass="form-control" ID="txtEducationId" Visible="False" runat="server" />
             <asp:TextBox CssClass="form-control" ID="txtResourceId" Visible="False" runat="server" />
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Personal Info</h4>
-                        
+                        <h4 class="card-title">Education Info</h4>
+
                         <div class="form-group row">
-                            <label for="txtType" class="col-sm-3 text-right control-label col-form-label">Address Line 1 * </label>
+                            <label for="txtType" class="col-sm-3 text-right control-label col-form-label">Type</label>
                             <div class="col-sm-9">
                                 <asp:TextBox CssClass="form-control" ID="txtType" runat="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtType" ForeColor="Red" ErrorMessage="Enter Type" ValidationGroup="g1" Width="125px"
-                                                            Font-Bold="True"></asp:RequiredFieldValidator>
+                                    Font-Bold="True"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="txtInstitute" class="col-sm-3 text-right control-label col-form-label">Address Line 2 * </label>
+                            <label for="txtInstitute" class="col-sm-3 text-right control-label col-form-label">Institute</label>
                             <div class="col-sm-9">
                                 <asp:TextBox CssClass="form-control" ID="txtInstitute" runat="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtInstitute" ForeColor="Red" ErrorMessage="Enter Address Line 2" ValidationGroup="g1" Width="125px"
-                                                            Font-Bold="True"></asp:RequiredFieldValidator>
+                                    Font-Bold="True"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="txtUniversity" class="col-sm-3 text-right control-label col-form-label">City</label>
+                            <label for="txtUniversity" class="col-sm-3 text-right control-label col-form-label">University</label>
                             <div class="col-sm-9">
                                 <asp:TextBox CssClass="form-control" ID="txtUniversity" runat="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtUniversity" ForeColor="Red" ErrorMessage="Enter Address Line 2" ValidationGroup="g1" Width="125px"
-                                                            Font-Bold="True"></asp:RequiredFieldValidator>
+                                    Font-Bold="True"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="txtPassingYear" class="col-sm-3 text-right control-label col-form-label">State</label>
+                            <label for="txtPassingYear" class="col-sm-3 text-right control-label col-form-label">Passing Year</label>
                             <div class="col-sm-9">
                                 <asp:TextBox CssClass="form-control" ID="txtPassingYear" runat="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtPassingYear" ForeColor="Red" ErrorMessage="Enter Address Line 2" ValidationGroup="g1" Width="125px"
-                                                            Font-Bold="True"></asp:RequiredFieldValidator>
+                                    Font-Bold="True"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="txtPercentage" class="col-sm-3 text-right control-label col-form-label">Zip</label>
+                            <label for="txtPercentage" class="col-sm-3 text-right control-label col-form-label">Percentage</label>
                             <div class="col-sm-9">
-                                <asp:TextBox  CssClass="form-control" ID="txtPercentage" runat="server" />
-                                
+                                <asp:TextBox CssClass="form-control" ID="txtPercentage" runat="server" />
+
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="txtGrade" class="col-sm-3 text-right control-label col-form-label">PIN</label>
+                            <label for="txtGrade" class="col-sm-3 text-right control-label col-form-label">Grade</label>
                             <div class="col-sm-9">
-                                <asp:TextBox  CssClass="form-control" ID="txtGrade" runat="server" />
-                                
+                                <asp:TextBox CssClass="form-control" ID="txtGrade" runat="server" />
+
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="txtCertificate" class="col-sm-3 text-right control-label col-form-label">Country</label>
+                            <label for="updlCertificate" class="col-sm-3 text-right control-label col-form-label">Certificate</label>
                             <div class="col-sm-9">
-                                <asp:TextBox  CssClass="form-control" ID="txtCertificate" runat="server" />
-                               
+                                <asp:FileUpload CssClass="form-control" ID="updlCertificate" runat="server" />
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="txtMarkSheet" class="col-sm-3 text-right control-label col-form-label">Country</label>
+                            <label for="upldMarkSheet" class="col-sm-3 text-right control-label col-form-label">Mark Sheet</label>
                             <div class="col-sm-9">
-                                <asp:TextBox  CssClass="form-control" ID="txtMarkSheet" runat="server" />
-                               
+                                <asp:FileUpload CssClass="form-control" ID="upldMarkSheet" runat="server" />
                             </div>
                         </div>
-                        
-                       
+
+
+
                     </div>
                     <div class="border-top">
                         <div class="card-body">
                             <asp:Button runat="server" ValidationGroup="g1" ID="btnAddResourceEducationAndContinue" CssClass="btn btn-primary" OnClick="btnAddResourceEducationAndContinue_OnClick" Text="Add Education And Continue"></asp:Button>
+                            <asp:Button runat="server" ValidationGroup="g1" ID="btnAddResourceEducationAndAddMore" CssClass="btn btn-info" OnClick="btnAddResourceEducationAndAddMore_OnClick" Text="Add Another Education"></asp:Button>
+                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-secondary" OnClick="btnCancel_OnClick" Text="Cancel"></asp:Button>
+
+
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,15 @@ namespace JobTrackingSystem
     {
 
         /// <summary>
+        /// txtEducationId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEducationId;
+
+        /// <summary>
         /// txtResourceId control.
         /// </summary>
         /// <remarks>
@@ -114,22 +123,22 @@ namespace JobTrackingSystem
         protected global::System.Web.UI.WebControls.TextBox txtGrade;
 
         /// <summary>
-        /// txtCertificate control.
+        /// updlCertificate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCertificate;
+        protected global::System.Web.UI.WebControls.FileUpload updlCertificate;
 
         /// <summary>
-        /// txtMarkSheet control.
+        /// upldMarkSheet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMarkSheet;
+        protected global::System.Web.UI.WebControls.FileUpload upldMarkSheet;
 
         /// <summary>
         /// btnAddResourceEducationAndContinue control.
@@ -139,5 +148,23 @@ namespace JobTrackingSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddResourceEducationAndContinue;
+
+        /// <summary>
+        /// btnAddResourceEducationAndAddMore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddResourceEducationAndAddMore;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

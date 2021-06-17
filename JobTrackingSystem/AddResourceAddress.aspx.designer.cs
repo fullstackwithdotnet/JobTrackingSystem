@@ -15,6 +15,15 @@ namespace JobTrackingSystem
     {
 
         /// <summary>
+        /// txtAddressId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAddressId;
+
+        /// <summary>
         /// txtResourceId control.
         /// </summary>
         /// <remarks>
@@ -130,5 +139,14 @@ namespace JobTrackingSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddResourceAddresAndAddMore;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }
